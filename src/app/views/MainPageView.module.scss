@@ -1,0 +1,108 @@
+.Section1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.MainTxt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding-top: 165px;
+}
+
+.Size {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.Section1Title {
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+  white-space: pre-line;
+}
+
+.NextTile {
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 70px;
+  display: flex;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  white-space: pre-line;
+  transform: translateY(0);
+}
+
+.NextTileDetails {
+  display: block;
+  box-sizing: border-box;
+  width: 160px;
+  height: 300px;
+  padding: 30px 20px 30px 30px;
+  background-color: #e66134;
+  text-align: left;
+}
+
+.NextTileInner {
+  position: relative;
+  height: 100%;
+}
+
+.NextTileHeading {
+  display: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.NextTileInnerBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.NextTileTitle {
+  display: block;
+  width: 100%;
+  height: 44px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.NextTileArrow {
+  display: block;
+  margin-top: 15px;
+}
+
+.NextTilePreview {
+  width: 210px;
+  height: 300px;
+  overflow: hidden;
+  background-color: #000;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

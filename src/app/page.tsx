@@ -1,5 +1,5 @@
-import { MainPageView } from './views/MainPageView';
 import { getDummyData } from './data/dummyData';
+import { MainPageView } from './views/MainPageView';
 
 export default function MainPage() {
   const dummyData = getDummyData();
