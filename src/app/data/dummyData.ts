@@ -8,6 +8,11 @@ export interface DummyData {
       next: number;
     };
   };
+  section2: {
+    title: string;
+    subTitle: string;
+    description: string;
+  }[];
 }
 
 export const getDummyData = (): DummyData => {
@@ -35,5 +40,31 @@ export const getDummyData = (): DummyData => {
         next: 1,
       },
     },
+    section2: [
+      {
+        title: '글로벌 매너 마스터 클래스',
+        subTitle: '국제 활동에 필요한 자신감과 경쟁력을 향상시키는 프로그램',
+        description:
+          '이문화 이해를 바탕으로 상황 별 매너와 에티켓을 완벽하게 습득하여\n국제 무대에서의 경쟁력을 업그레이드 합니다.',
+      },
+      {
+        title: '글로벌 비즈니스 커뮤니케이션',
+        subTitle: '성과를 만드는 글로벌 비즈니스 스킬',
+        description:
+          '국제 활동에서 인정받는 리더가 갖춰야 할\n완벽한 커뮤니케이션 방법을 습득할 수 있습니다.',
+      },
+      {
+        title: '한국 예절 클래스',
+        subTitle: '외국인을 위한 필수 한국 예절 가이드',
+        description:
+          '글로벌 매너 전문가의 특별한 인사이트로\n한국 고유의 예절 문화를 친절하게 알려드립니다.',
+      },
+      {
+        title: '한국 문화 스토리투어',
+        subTitle: '흥미로운 스토리텔링형 문화 투어 프로그램',
+        description:
+          '한국 예절 전문가와 함께하는 스토리 투어로\n한국 고유의 문화에 담긴 가치를 발견합니다.',
+      },
+    ],
   };
 };

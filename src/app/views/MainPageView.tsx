@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 
 import img_main_02 from '@/assets/images/img_main_sec2.jpg';
 import img_main_02_mo from '@/assets/images/img_main_sec2_mo.jpg';
+import { SlideNumber } from '@/components/SlideNumber';
 
 import styles from './MainPageView.module.scss';
 import { TextBox } from '../components/TextBox';
@@ -96,7 +97,7 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
                 />
               </p>
             </div>
-            <div className={styles.SlideContainer}></div>
+            <SlideNumber slideData={data.section2} />
           </div>
         </div>
       </section>
