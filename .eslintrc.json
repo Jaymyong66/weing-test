@@ -49,6 +49,11 @@
             "pattern": "next/*",
             "group": "builtin",
             "position": "after"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal",
+            "position": "before"
           }
         ],
         "newlines-between": "always",
@@ -57,14 +62,18 @@
           "caseInsensitive": true
         }
       }
-    ]
+    ],
+    "import/no-unresolved": "error"
   },
   "settings": {
     "react": {
       "version": "detect"
     },
     "import/resolver": {
-      "typescript": {}
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "./tsconfig.json"
+      }
     }
   }
 }
