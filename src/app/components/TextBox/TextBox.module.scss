@@ -1,0 +1,17 @@
+.TextBox {
+  margin-top: 50px;
+
+  p {
+    color: rgb(28 37 47);
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+    word-wrap: break-word;
+  }
+
+  .dpb {
+    display: block;
+  }
+}

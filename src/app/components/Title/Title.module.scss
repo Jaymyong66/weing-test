@@ -1,0 +1,87 @@
+.TitleTypeA {
+  h2 {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgb(0 22 46);
+    font-size: 6.6rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+
+    @media (width <= 1024px) {
+      font-size: 6rem;
+    }
+
+    @media (width <= 768px) {
+      font-size: 5.215rem;
+    }
+
+    @media (width <= 540px) {
+      font-size: 4.3rem;
+    }
+
+    @media (width <= 460px) {
+      font-size: 4rem;
+    }
+  }
+
+  h2::before {
+    position: absolute;
+    top: -14px;
+    left: -7px;
+    z-index: -1;
+    display: block;
+    width: 262px;
+    height: 40px;
+    background-color: rgb(230 97 52);
+    content: '';
+
+    @media (width <= 1024px) {
+      width: 240px;
+    }
+
+    @media (width <= 768px) {
+      top: -5px;
+      width: 202px;
+      height: 26px;
+    }
+
+    @media (width <= 540px) {
+      width: 168px;
+      height: 22px;
+    }
+
+    @media (width <= 460px) {
+      width: 157px;
+    }
+
+    @media (width <= 430px) {
+      width: 147px;
+    }
+
+    @media (width <= 375px) {
+      width: 137px;
+    }
+
+    @media (width <= 350px) {
+      width: 129px;
+    }
+  }
+
+  p {
+    margin-top: 20px;
+    color: rgb(123 129 136);
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+    word-wrap: break-word;
+
+    @media (width <= 540px) {
+      font-size: 1.771rem;
+    }
+  }
+}
