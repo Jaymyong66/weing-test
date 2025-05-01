@@ -1,0 +1,74 @@
+.SlideArea {
+  box-sizing: border-box;
+  padding: 50px 60px 50px 80px;
+  background-color: rgb(255 255 255);
+  box-shadow: rgb(0 0 0 / 6%) -25px 6px 32px 0;
+
+  @media (width <= 1024px) {
+    padding: 40px;
+  }
+
+  @media (width <= 768px) {
+    padding: 30px;
+  }
+}
+
+.Num {
+  font-size: 0;
+  text-align: right;
+
+  @media (width <= 1024px) {
+    text-align: left;
+  }
+
+  p {
+    display: inline-block;
+
+    .TotalNum::before {
+      position: absolute;
+      top: 3px;
+      left: -6px;
+      display: block;
+      clear: both;
+      width: 1px;
+      height: 11.46px;
+      background-color: rgb(28 37 47);
+      transform: skew(336deg);
+      content: '';
+    }
+
+    span {
+      position: relative;
+      display: inline-block;
+      color: rgb(28 37 47);
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    span:first-child {
+      box-sizing: border-box;
+      padding-right: 12px;
+    }
+  }
+
+  .Raleway {
+    font-family: Raleway, 'Noto Sans KR', sans-serif;
+  }
+
+  .TotalNum {
+    ::before {
+      position: absolute;
+      top: 3px;
+      left: -6px;
+      display: block;
+      clear: both;
+      width: 1px;
+      height: 11.46px;
+      background-color: rgb(28 37 47);
+      transform: skew(336deg);
+      content: '';
+    }
+  }
+}
