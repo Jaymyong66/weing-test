@@ -5,10 +5,12 @@ import React, { useState } from 'react';
 
 import img_main_02 from '@/assets/images/img_main_sec2.jpg';
 import img_main_02_mo from '@/assets/images/img_main_sec2_mo.jpg';
+import { LinkButton } from '@/components/LinkButton';
 import { SlideNumber } from '@/components/SlideNumber';
+import { Video } from '@/components/Video';
 
 import styles from './MainPageView.module.scss';
-import { TextBox } from '../components/TextBox';
+import { TextArea } from '../components/TextArea';
 import { Title } from '../components/Title';
 import { DummyData } from '../data/dummyData';
 
@@ -75,7 +77,7 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
                 title='교육 프로그램'
                 subTitle='프로로 성장시키는 최고 수준의 교육이 있습니다.'
               />
-              <TextBox
+              <TextArea
                 text={
                   '마리아케이 글로벌은\n국내 유일 워싱턴 프로토콜 스쿨 라이센스 강사가\n소통과 교류의 가치를 새롭게 조명함으로써 사람과 사람을,\n한국인과 세계인을 연결하는 전문 교육 프로그램을 운영하고 있습니다.'
                 }
@@ -98,6 +100,34 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
               </p>
             </div>
             <SlideNumber slideData={data.section2} />
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.Section3}>
+        <div className={styles.Size}>
+          <div className={styles.Inner}>
+            <div className={styles.ContentWrapper}>
+              <Video src='https://www.youtube.com/embed/24FxDKFzin0?autoplay=1#' />
+              <Title
+                title='마리아케이 글로벌'
+                subTitle='최고의 프로들이 당신의 가능성을 일깨웁니다.'
+                className={styles.TitleTypeA}
+              />
+              <TextArea
+                text={
+                  '글로벌 매너, 국제의전, 퍼스널 브랜딩 등 각 분야의 최고의 전문가들로 이루어진 마리아 케이글로벌. 우리는 이론에 치중한 진부한 교육을 지양하며, 글로벌 무대에서 완벽히 통하는 가장 진보된 정보를 교육에 적용하고 있습니다. 외국인 컨설턴트와의 실전 트레이닝 등 유일하고 실용적인 액션러닝을 통해 글로벌 경쟁력을 갖춘 인재 육성 솔루션을 제안하고 있습니다.'
+                }
+                className={styles.TextArea}
+                footer={
+                  <LinkButton
+                    label='LEARN MORE'
+                    href='https://mariakglobal.com/about/'
+                    className={styles.LearnMore}
+                  />
+                }
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -9,8 +9,8 @@ import { removeNewlines, splitTextByNewlines } from '@/utils/textFormatters';
 
 import { ArrowBox } from '../ArrowBox';
 import { Container } from '../Container';
-import styles from './SlideNumber.module.scss';
 import { LinkButton } from '../LinkButton';
+import styles from './SlideNumber.module.scss';
 
 import type { Swiper as SwiperType } from 'swiper';
 

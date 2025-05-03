@@ -7,4 +7,20 @@
     margin-top: 60px;
     text-align: right;
   }
+
+  a {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 115px;
+    height: 44px;
+    background-color: #dbdbdb;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 1px;
+    text-align: left;
+    text-indent: -20px;
+    text-transform: uppercase;
+  }
 }
