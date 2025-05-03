@@ -1,15 +1,21 @@
 'use client';
 
-import { Fragment } from 'react';
+import { Fragment, ReactNode } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import styles from './TextBox.module.scss';
+import styles from './TextArea.module.scss';
 
-interface TextBoxProps {
+interface TextAreaProps {
   text: string;
+  className?: string;
+  footer?: ReactNode;
 }
 
-export const TextBox: React.FC<TextBoxProps> = ({ text }) => {
+export const TextArea: React.FC<TextAreaProps> = ({
+  text,
+  className,
+  footer,
+}) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 891px)' });
 
   const renderText = () => {
@@ -33,7 +39,12 @@ export const TextBox: React.FC<TextBoxProps> = ({ text }) => {
     }
   };
 
-  return <div className={styles.TextBox}>{renderText()}</div>;
+  return (
+    <div className={`${styles.TextArea} ${className}`}>
+      <div className={styles.TextBox}>{renderText()}</div>
+      {footer}
+    </div>
+  );
 };
 
-export default TextBox;
+export default TextArea;
