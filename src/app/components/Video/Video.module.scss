@@ -1,0 +1,35 @@
+.VideoArea {
+  position: relative;
+  float: left;
+  width: 60.75%;
+  box-shadow: -25px 25px 32px 0 rgb(0 0 0 / 21%);
+
+  @media (width <= 1024px) {
+    float: none;
+    width: 100%;
+  }
+
+  .Video {
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 60%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+.YoutubeBox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('/images/img_poster.jpg') no-repeat center top;
+  background-size: contain;
+  cursor: pointer;
+}
