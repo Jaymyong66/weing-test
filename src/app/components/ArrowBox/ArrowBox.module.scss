@@ -1,0 +1,54 @@
+.ArrowBox {
+  margin-top: 30px;
+
+  @media (width <= 1024px) {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    margin-top: 0;
+  }
+
+  @media (width <= 768px) {
+    bottom: 30px;
+    left: 30px;
+  }
+}
+
+.IconOff {
+  display: block;
+}
+
+.IconOn {
+  display: none;
+}
+
+.ArrowButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 52px;
+  height: 52px;
+  margin-left: 6px;
+  border: 1px solid #999;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:hover {
+    border-color: #e66134;
+
+    .IconOff {
+      display: none;
+    }
+
+    .IconOn {
+      display: block;
+    }
+  }
+}

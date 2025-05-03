@@ -7,8 +7,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { twoDigitFormat } from '@/utils/formatters';
 import { removeNewlines, splitTextByNewlines } from '@/utils/textFormatters';
 
+import { ArrowBox } from '../ArrowBox';
 import { Container } from '../Container';
 import styles from './SlideNumber.module.scss';
+import { LinkButton } from '../LinkButton';
 
 import type { Swiper as SwiperType } from 'swiper';
 
@@ -57,7 +59,7 @@ const SlideNumber = ({ slideData }: SlideNumberProps) => {
           </p>
         </div>
 
-        <div className={styles.SliceWrap}>
+        <div className={styles.SlideWrap}>
           <Swiper
             spaceBetween={20}
             slidesPerView={1}
@@ -80,24 +82,17 @@ const SlideNumber = ({ slideData }: SlideNumberProps) => {
                       : removeNewlines(slide.description)}
                   </p>
                 </div>
-                {/* 
-                  <div className={styles.LearnMore}>
-                    <button className={styles.LearnMoreBtn}>LEARN MORE</button>
-                  </div> */}
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-
-        <div className={styles.SlideNav}>
-          <button className={styles.NavPrev} onClick={handlePrev}>
-            <span className='sr-only'>이전</span>
-          </button>
-          <button className={styles.NavNext} onClick={handleNext}>
-            <span className='sr-only'>다음</span>
-          </button>
+          <LinkButton
+            label='LEARN MORE'
+            href='https://mariakglobal.com/programs/#item1'
+            className={styles.LearnMore}
+          />
         </div>
       </div>
+      <ArrowBox onClickPrev={handlePrev} onClickNext={handleNext} />
     </Container>
   );
 };

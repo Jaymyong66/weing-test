@@ -1,0 +1,10 @@
+.Wrapper {
+  margin-top: 50px;
+  font-size: 0;
+  text-align: left;
+
+  @media (width <= 1024px) {
+    margin-top: 60px;
+    text-align: right;
+  }
+}

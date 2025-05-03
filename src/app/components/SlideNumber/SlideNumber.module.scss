@@ -73,7 +73,7 @@
   }
 }
 
-.SliceWrap {
+.SlideWrap {
   @media (width <= 1024px) {
     margin-top: 25px;
   }
@@ -110,56 +110,20 @@
   }
 }
 
-.SlideNav {
-  display: flex;
-  margin-top: 40px;
-}
-
-.NavPrev,
-.NavNext {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  margin-right: 10px;
-  border: 1px solid #ddd;
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: #e66134;
-    background-color: #e66134;
-  }
-
-  &::before {
-    display: block;
-    width: 20px;
-    height: 20px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: '';
-  }
-}
-
-.NavPrev {
-  &::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E");
-  }
-
-  &:hover::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E");
-  }
-}
-
-.NavNext {
-  &::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
-  }
-
-  &:hover::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+.LearnMore {
+  a {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 115px;
+    height: 44px;
+    background-color: #dbdbdb;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 1px;
+    text-align: left;
+    text-indent: -20px;
+    text-transform: uppercase;
   }
 }

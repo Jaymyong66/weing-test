@@ -1,6 +1,10 @@
 .TextBox {
   margin-top: 50px;
 
+  @media (width <= 1024px) {
+    margin-top: 30px;
+  }
+
   p {
     color: rgb(28 37 47);
     font-size: 1.8rem;
