@@ -1,13 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useRef, useState } from 'react';
-import { Autoplay } from 'swiper/modules';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import img_main_02 from '@/assets/images/img_main_sec2.jpg';
 import img_main_02_mo from '@/assets/images/img_main_sec2_mo.jpg';
+import img_main_sec4_1 from '@/assets/images/img_main_sec4_1.jpg';
 import { ArrowBox } from '@/components/ArrowBox';
+import { Inner } from '@/components/Inner';
 import { LinkButton } from '@/components/LinkButton';
 import { Size } from '@/components/Size';
 import { SlideNumber } from '@/components/SlideNumber';
@@ -157,12 +158,29 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
                     <SwiperSlide key={index}>
                       <a href={item.link} className={styles.SlideLink}>
                         <div>
-                          <Image
-                            src={item.imageSrc}
-                            alt=''
-                            width={300}
-                            height={200}
-                          />
+                          <div
+                            className={styles.SlideImg}
+                            style={{
+                              backgroundImage: `url(${item.imageSrc})`,
+                            }}
+                          >
+                            <Image
+                              src={img_main_sec4_1}
+                              alt=''
+                              width={316}
+                              height={202}
+                            />
+                          </div>
+                          <div className={styles.TextBox}>
+                            <div className={styles.Table}>
+                              <div className={styles.TableCell}>
+                                <div className={styles.Text}>
+                                  <em>{item.title}</em>
+                                  <span>{item.content}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </a>
                     </SwiperSlide>
@@ -171,6 +189,45 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className={styles.Section5}>
+          <Size className={styles.Size}>
+            <Inner className={styles.Inner}>
+              <div className={styles.Top}>
+                <Title
+                  title='피드백'
+                  subTitle='더 큰 세상에 대한 두려움을 떨치는 경험'
+                  className={styles.TitleTypeA}
+                />
+                <ArrowBox
+                  className={styles.ArrowBox}
+                  onClickPrev={() => {}}
+                  onClickNext={() => {}}
+                />
+              </div>
+              <div className={styles.Bottom}>
+                <div className={styles.SlideArea}>
+                  <Swiper spaceBetween={40} slidesPerView={2}>
+                    {data.section5.map((item, index) => (
+                      <SwiperSlide key={index}>
+                        <TextArea
+                          text={item.content}
+                          className={styles.TextArea}
+                        >
+                          <TextArea.TextInfo
+                            author={item.author}
+                            organization={item.organization}
+                            className={styles.TextInfo}
+                          />
+                        </TextArea>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
+              </div>
+            </Inner>
+          </Size>
         </section>
       </section>
     </>

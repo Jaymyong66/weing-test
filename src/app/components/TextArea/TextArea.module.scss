@@ -19,3 +19,24 @@
     display: block;
   }
 }
+
+.TextInfo {
+  box-sizing: border-box;
+  padding-top: 20px;
+  border-top: 1px solid rgb(28 37 47 / 20%);
+  font-size: 1.6rem;
+  line-height: 1;
+  letter-spacing: -0.5px;
+
+  em {
+    display: block;
+    color: #1c252f;
+    font-weight: 500;
+  }
+
+  span {
+    display: block;
+    margin-top: 8px;
+    color: #808080;
+  }
+}

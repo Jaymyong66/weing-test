@@ -1,0 +1,14 @@
+.Size {
+  @media (width <= 1200px) {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1360px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 40px;
+}

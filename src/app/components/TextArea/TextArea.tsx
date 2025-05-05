@@ -9,12 +9,14 @@ interface TextAreaProps {
   text: string;
   className?: string;
   footer?: ReactNode;
+  children?: ReactNode;
 }
 
-export const TextArea: React.FC<TextAreaProps> = ({
+const TextAreaBase: React.FC<TextAreaProps> = ({
   text,
   className,
   footer,
+  children,
 }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 891px)' });
 
@@ -43,8 +45,28 @@ export const TextArea: React.FC<TextAreaProps> = ({
     <div className={`${styles.TextArea} ${className}`}>
       <div className={styles.TextBox}>{renderText()}</div>
       {footer}
+      {children}
     </div>
   );
 };
+
+interface TextInfoProps {
+  author: string;
+  organization: string;
+  className?: string;
+}
+
+const TextInfo = ({ author, organization, className }: TextInfoProps) => {
+  return (
+    <div className={`${styles.TextInfo} ${className}`}>
+      <em>{author}</em>
+      <span>{organization}</span>
+    </div>
+  );
+};
+
+const TextArea = Object.assign(TextAreaBase, {
+  TextInfo,
+});
 
 export default TextArea;

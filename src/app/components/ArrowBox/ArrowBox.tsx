@@ -8,13 +8,14 @@ import arrowPrevOn from '@/assets/icons/arrow_prev_on.png';
 import styles from './ArrowBox.module.scss';
 
 interface ArrowBoxProps {
+  className?: string;
   onClickPrev: () => void;
   onClickNext: () => void;
 }
 
-const ArrowBox = ({ onClickPrev, onClickNext }: ArrowBoxProps) => {
+const ArrowBox = ({ onClickPrev, onClickNext, className }: ArrowBoxProps) => {
   return (
-    <div className={styles.ArrowBox}>
+    <div className={`${styles.ArrowBox} ${className}`}>
       <div
         className={`${styles.ArrowPrev} ${styles.ArrowButton}`}
         tabIndex={0}
