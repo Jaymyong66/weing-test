@@ -207,7 +207,15 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
               </div>
               <div className={styles.Bottom}>
                 <div className={styles.SlideArea}>
-                  <Swiper spaceBetween={40} slidesPerView={2}>
+                  <Swiper
+                    spaceBetween={40}
+                    slidesPerView={2}
+                    breakpoints={{
+                      1550: {
+                        slidesPerView: 3,
+                      },
+                    }}
+                  >
                     {data.section5.map((item, index) => (
                       <SwiperSlide key={index}>
                         <TextArea
