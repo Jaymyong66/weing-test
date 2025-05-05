@@ -148,7 +148,7 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
               />
               <div className={styles.SlideArea}>
                 <Swiper
-                  spaceBetween={25}
+                  spaceBetween={30}
                   slidesPerView={3.5}
                   centeredSlides={true}
                   loop={true}
@@ -167,8 +167,7 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
                             <Image
                               src={img_main_sec4_1}
                               alt=''
-                              width={316}
-                              height={202}
+                              style={{ height: '260px' }}
                             />
                           </div>
                           <div className={styles.TextBox}>
