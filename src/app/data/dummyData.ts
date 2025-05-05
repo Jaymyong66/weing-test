@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 export interface DummyData {
   section1: {
     [key: number]: {
@@ -12,6 +14,10 @@ export interface DummyData {
     title: string;
     subTitle: string;
     description: string;
+  }[];
+  section4: {
+    imageSrc: string;
+    link: string;
   }[];
 }
 
@@ -64,6 +70,36 @@ export const getDummyData = (): DummyData => {
         subTitle: '흥미로운 스토리텔링형 문화 투어 프로그램',
         description:
           '한국 예절 전문가와 함께하는 스토리 투어로\n한국 고유의 문화에 담긴 가치를 발견합니다.',
+      },
+    ],
+    section4: [
+      {
+        imageSrc: '/images/img_main_03.jpg',
+        link: 'https://mariakglobal.com/programs/#item1',
+      },
+      {
+        imageSrc: '/images/img_main_03.jpg',
+        link: 'https://mariakglobal.com/programs/#item1',
+      },
+      {
+        imageSrc: '/images/img_main_03.jpg',
+        link: 'https://mariakglobal.com/programs/#item1',
+      },
+      {
+        imageSrc: '/images/img_main_03.jpg',
+        link: 'https://mariakglobal.com/programs/#item1',
+      },
+      {
+        imageSrc: '/images/img_main_03.jpg',
+        link: 'https://mariakglobal.com/programs/#item1',
+      },
+      {
+        imageSrc: '/images/img_main_03.jpg',
+        link: 'https://mariakglobal.com/programs/#item1',
+      },
+      {
+        imageSrc: '/images/img_main_03.jpg',
+        link: 'https://mariakglobal.com/programs/#item1',
       },
     ],
   };

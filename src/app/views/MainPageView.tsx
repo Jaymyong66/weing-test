@@ -1,11 +1,15 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import img_main_02 from '@/assets/images/img_main_sec2.jpg';
 import img_main_02_mo from '@/assets/images/img_main_sec2_mo.jpg';
+import { ArrowBox } from '@/components/ArrowBox';
 import { LinkButton } from '@/components/LinkButton';
+import { Size } from '@/components/Size';
 import { SlideNumber } from '@/components/SlideNumber';
 import { Video } from '@/components/Video';
 
@@ -130,6 +134,44 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className={styles.Section4_5}>
+        <section className={styles.Section4}>
+          <div className={styles.Size}>
+            <div className={styles.Inner}>
+              <Title
+                title='우리가 하는 일'
+                subTitle='밀착, 교감, 즐거움 그리고 성장'
+                className={styles.TitleTypeA}
+              />
+              <div className={styles.SlideArea}>
+                <Swiper
+                  spaceBetween={25}
+                  slidesPerView={3.5}
+                  centeredSlides={true}
+                  loop={true}
+                  className={styles.CaseSlide}
+                >
+                  {data.section4.map((item, index) => (
+                    <SwiperSlide key={index}>
+                      <a href={item.link} className={styles.SlideLink}>
+                        <div>
+                          <Image
+                            src={item.imageSrc}
+                            alt=''
+                            width={300}
+                            height={200}
+                          />
+                        </div>
+                      </a>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </>
   );
