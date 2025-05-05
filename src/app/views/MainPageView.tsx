@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import img_main_02 from '@/assets/images/img_main_sec2.jpg';
@@ -19,12 +19,15 @@ import { TextArea } from '../components/TextArea';
 import { Title } from '../components/Title';
 import { DummyData } from '../data/dummyData';
 
+import type { Swiper as SwiperType } from 'swiper';
+
 interface MainPageViewProps {
   data: DummyData;
 }
 
 export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
   const [currentVisual, setCurrentVisual] = useState(data.section1[1]);
+  const feedbackSwiperRef = useRef<SwiperType | null>(null);
 
   const handleNextTileClick = () => {
     setCurrentVisual(data.section1[currentVisual.next]);
@@ -201,8 +204,8 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
                 />
                 <ArrowBox
                   className={styles.ArrowBox}
-                  onClickPrev={() => {}}
-                  onClickNext={() => {}}
+                  onClickPrev={() => feedbackSwiperRef.current?.slidePrev()}
+                  onClickNext={() => feedbackSwiperRef.current?.slideNext()}
                 />
               </div>
               <div className={styles.Bottom}>
@@ -210,10 +213,14 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
                   <Swiper
                     spaceBetween={40}
                     slidesPerView={2}
+                    loop={true}
                     breakpoints={{
                       1550: {
                         slidesPerView: 3,
                       },
+                    }}
+                    onSwiper={(swiper) => {
+                      feedbackSwiperRef.current = swiper;
                     }}
                   >
                     {data.section5.map((item, index) => (
