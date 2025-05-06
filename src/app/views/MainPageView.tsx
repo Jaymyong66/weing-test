@@ -8,6 +8,7 @@ import img_main_02 from '@/assets/images/img_main_sec2.jpg';
 import img_main_02_mo from '@/assets/images/img_main_sec2_mo.jpg';
 import img_main_sec4_1 from '@/assets/images/img_main_sec4_1.jpg';
 import { ArrowBox } from '@/components/ArrowBox';
+import { ArrowButton } from '@/components/ArrowButton';
 import { Inner } from '@/components/Inner';
 import { LinkButton } from '@/components/LinkButton';
 import { Size } from '@/components/Size';
@@ -219,11 +220,14 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
                 <div className={styles.SlideArea}>
                   <Swiper
                     spaceBetween={40}
-                    slidesPerView={2}
+                    slidesPerView={1}
                     loop={true}
                     breakpoints={{
                       1550: {
                         slidesPerView: 3,
+                      },
+                      840: {
+                        slidesPerView: 2,
                       },
                     }}
                     onSwiper={(swiper) => {
@@ -245,6 +249,14 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
                       </SwiperSlide>
                     ))}
                   </Swiper>
+                  <ArrowButton
+                    direction='prev'
+                    onClick={() => feedbackSwiperRef.current?.slidePrev()}
+                  />
+                  <ArrowButton
+                    direction='next'
+                    onClick={() => feedbackSwiperRef.current?.slideNext()}
+                  />
                 </div>
               </div>
             </Inner>

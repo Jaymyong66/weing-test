@@ -32,6 +32,10 @@
   line-height: 1;
   letter-spacing: -0.5px;
 
+  @media (width <= 540px) {
+    font-size: 1.4rem;
+  }
+
   em {
     display: block;
     color: #1c252f;
