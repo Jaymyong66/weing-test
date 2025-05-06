@@ -187,6 +187,14 @@
             overflow: hidden;
             opacity: 0;
             visibility: hidden;
+
+            &:checked + label::before {
+              border-color: #e66134;
+              background-color: #e66134;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath fill='%23FFFFFF' d='M4.116 7.753L1.147 4.784 0 5.93l4.116 4.117L12 2.166 10.853 1.02z'/%3E%3C/svg%3E");
+              background-position: center;
+              background-repeat: no-repeat;
+            }
           }
 
           label {
