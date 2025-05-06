@@ -68,7 +68,11 @@ const Section7 = () => {
     <section className={styles.Section7}>
       <Inner>
         <Size>
-          <Title title='교육문의' subTitle='상담문의 작성하기' />
+          <Title
+            title='교육문의'
+            subTitle='상담문의 작성하기'
+            className={styles.Title}
+          />
         </Size>
         <div className={styles.ContactFormWrapper}>
           <div className={styles.Right}>

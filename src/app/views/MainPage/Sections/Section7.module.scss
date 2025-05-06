@@ -1,6 +1,21 @@
 .Section7 {
   min-height: 500px;
 
+  .Title {
+    h2::before {
+      inset: auto -20px -10px auto;
+      width: 84.5%;
+
+      @media (width <= 768px) {
+        height: 26px;
+      }
+
+      @media (width <= 540px) {
+        height: 22px;
+      }
+    }
+  }
+
   .ContactFormWrapper {
     box-sizing: border-box;
     margin-top: 48px;
@@ -55,6 +70,13 @@
       @media (width <= 540px) {
         display: block;
         width: 100%;
+      }
+
+      tr {
+        @media (width <= 540px) {
+          display: block;
+          width: 100%;
+        }
       }
 
       td {
