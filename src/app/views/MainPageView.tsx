@@ -19,6 +19,7 @@ import styles from './MainPageView.module.scss';
 import { TextArea } from '../components/TextArea';
 import { Title } from '../components/Title';
 import { DummyData } from '../data/dummyData';
+import { Section7 } from './MainPage/Sections';
 
 import type { Swiper as SwiperType } from 'swiper';
 
@@ -280,6 +281,8 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
           </Inner>
         </Size>
       </section>
+
+      <Section7 />
     </>
   );
 };
