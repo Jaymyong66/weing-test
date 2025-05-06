@@ -42,9 +42,11 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
         style={{ backgroundImage: `url(${currentVisual.mainVisual})` }}
       >
         <div className={styles.MainTxt}>
-          <div className={styles.Size}>
-            <div className={styles.Section1Title}>{currentVisual.title}</div>
-          </div>
+          <Size className={styles.Size}>
+            <Inner.InnerTable>
+              <div className={styles.Section1Title}>{currentVisual.title}</div>
+            </Inner.InnerTable>
+          </Size>
         </div>
 
         <button className={styles.NextTile} onClick={handleNextTileClick}>
@@ -80,7 +82,7 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
       </section>
 
       <section className={styles.Section2}>
-        <div className={styles.Size}>
+        <Size className={styles.Size}>
           <div className={styles.Section2Inner}>
             <div className={styles.Section2TxtArea}>
               <Title
@@ -111,11 +113,11 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
             </div>
             <SlideNumber slideData={data.section2} />
           </div>
-        </div>
+        </Size>
       </section>
 
       <section className={styles.Section3}>
-        <div className={styles.Size}>
+        <Size className={styles.Size}>
           <div className={styles.Inner}>
             <div className={styles.ContentWrapper}>
               <Video src='https://www.youtube.com/embed/24FxDKFzin0?autoplay=1#' />
@@ -139,12 +141,12 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
               />
             </div>
           </div>
-        </div>
+        </Size>
       </section>
 
       <section className={styles.Section4_5}>
         <section className={styles.Section4}>
-          <div className={styles.Size}>
+          <Size className={styles.Size}>
             <div className={styles.Inner}>
               <Title
                 title='우리가 하는 일'
@@ -192,7 +194,7 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
                 </Swiper>
               </div>
             </div>
-          </div>
+          </Size>
         </section>
 
         <section className={styles.Section5}>
