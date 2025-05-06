@@ -376,6 +376,14 @@
     }
 
     .LearnMore {
+      margin-top: 50px;
+      text-align: left;
+
+      @media (width <= 1024px) {
+        margin-top: 60px;
+        text-align: right;
+      }
+
       a {
         background-color: #949aa1;
         color: #fff;
