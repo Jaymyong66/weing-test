@@ -1,0 +1,207 @@
+.Section1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .Size {
+    position: relative;
+    height: 100%;
+  }
+
+  .MainTxt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-top: 165px;
+  }
+
+  .Section1Title {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    overflow: hidden;
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02rem;
+    white-space: pre-line;
+    transform: translate(0%, -50%) matrix(1, 0, 0, 1, 0, 0);
+
+    @media (width <= 1024px) {
+      position: absolute;
+      left: 20px;
+      margin-top: -160px;
+    }
+
+    @media (width <= 768px) {
+      margin-top: -130px;
+      font-size: 4.32rem;
+    }
+
+    @media (width <= 540px) {
+      height: 78px;
+      font-size: 3.168rem;
+    }
+
+    @media (width <= 430px) {
+      height: 66px;
+      font-size: 2.598rem;
+    }
+
+    @media (width <= 375px) {
+      height: 57px;
+      font-size: 2.329rem;
+    }
+
+    @media (width <= 350px) {
+      height: 49px;
+      font-size: 1.9rem;
+    }
+  }
+
+  .NextTile {
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 70px;
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    white-space: pre-line;
+    transform: translateY(0);
+
+    @media (width <= 768px) {
+      bottom: 30px;
+    }
+  }
+
+  .NextTileDetails {
+    display: block;
+    box-sizing: border-box;
+    width: 160px;
+    height: 300px;
+    padding: 30px 20px 30px 30px;
+    background-color: #e66134;
+    text-align: left;
+
+    @media (width <= 1024px) {
+      height: 260px;
+    }
+
+    @media (width <= 768px) {
+      width: 126px;
+      height: 273px;
+      padding: 30px 20px;
+    }
+
+    @media (width <= 540px) {
+      width: 145px;
+      height: 175px;
+      padding: 30px 20px;
+    }
+
+    @media (width <= 430px) {
+      width: 150px;
+      height: 165px;
+    }
+
+    @media (width <= 350px) {
+      height: 135px;
+    }
+  }
+
+  .NextTileInner {
+    position: relative;
+    height: 100%;
+  }
+
+  .NextTileHeading {
+    display: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .NextTileInnerBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .NextTileTitle {
+    display: block;
+    width: 100%;
+    height: 44px;
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 22px;
+
+    @media (width <= 430px) {
+      font-size: 1.6rem;
+    }
+
+    @media (width <= 376px) {
+      font-size: 1.49rem;
+    }
+  }
+
+  .NextTileArrow {
+    display: block;
+    margin-top: 15px;
+
+    @media (width <= 430px) {
+      margin-top: 7px;
+    }
+  }
+
+  .NextTilePreview {
+    width: 210px;
+    height: 300px;
+    overflow: hidden;
+    background-color: #000;
+
+    @media (width <= 1024px) {
+      width: 185px;
+      height: 260px;
+    }
+
+    @media (width <= 768px) {
+      width: 157px;
+      height: 273px;
+    }
+
+    @media (width <= 540px) {
+      width: 130px;
+      height: 175px;
+    }
+
+    @media (width <= 430px) {
+      width: 120px;
+      height: 165px;
+    }
+
+    @media (width <= 350px) {
+      height: 135px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,206 @@
+.Section3 {
+  .Size {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1360px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @media (width <= 1024px) {
+      padding: 0;
+    }
+  }
+
+  .ContentWrapper {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 150px 0 140px;
+
+    @media (width <= 1024px) {
+      padding: 0 0 80px 80px;
+    }
+
+    @media (width <= 768px) {
+      padding: 0 0 40px 40px;
+    }
+
+    @media (width <= 460px) {
+      padding: 0 0 40px 25px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 160px;
+      z-index: -1;
+      display: block;
+      clear: both;
+      width: 200%;
+      height: 100%;
+      background-color: #00162e;
+      content: '';
+
+      @media (width <= 1024px) {
+        left: 115px;
+      }
+
+      @media (width <= 768px) {
+        left: 75px;
+      }
+
+      @media (width <= 460px) {
+        left: 50px;
+      }
+
+      @media (width <= 375px) {
+        left: 30px;
+      }
+    }
+
+    &::after {
+      display: block;
+      clear: both;
+      content: '';
+    }
+  }
+
+  .TitleTypeA {
+    position: absolute;
+    top: 210px;
+    right: 0;
+    z-index: 30;
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 45px;
+    text-align: right;
+
+    h2 {
+      color: #fff;
+      line-height: 0.75;
+    }
+
+    h2::before {
+      inset: auto -20px -24px auto;
+      width: 305px;
+      background-color: #e66134;
+      transform: skew(1deg, 1deg);
+
+      @media (width <= 1024px) {
+        width: 275px;
+      }
+
+      @media (width <= 768px) {
+        bottom: -16px;
+        width: 233px;
+        height: 28px;
+      }
+
+      @media (width <= 540px) {
+        width: 197px;
+      }
+
+      @media (width <= 460px) {
+        width: 185px;
+      }
+
+      @media (width <= 430px) {
+        width: 175px;
+        height: 24px;
+      }
+
+      @media (width <= 375px) {
+        right: -15px;
+        width: 158px;
+      }
+
+      @media (width <= 350px) {
+        width: 144px;
+      }
+    }
+
+    p {
+      margin-top: 30px;
+      color: #c2cbd5;
+    }
+
+    @media (width <= 1350px) {
+      padding-right: 45px;
+    }
+
+    @media (width <= 1024px) {
+      position: static;
+      margin-top: 65px;
+      padding: 0 35px 0 70px;
+      text-align: left;
+    }
+
+    @media (width <= 540px) {
+      margin-top: 45px;
+    }
+
+    @media (width <= 460px) {
+      padding: 0 20px 0 50px;
+    }
+  }
+
+  .TextArea {
+    float: left;
+    box-sizing: border-box;
+    width: 39.25%;
+    margin: 0;
+    padding-top: 200px;
+    padding-left: 55px;
+
+    @media (width <= 1024px) {
+      float: none;
+      width: 100%;
+      margin-top: 45px;
+      padding: 0 35px 0 70px;
+    }
+
+    @media (width <= 540px) {
+      margin-top: 30px;
+    }
+
+    @media (width <= 460px) {
+      padding: 0 20px 0 50px;
+    }
+
+    @media (width <= 375px) {
+      margin-top: 25px;
+    }
+
+    @media (width <= 350px) {
+      padding: 0 20px 0 23px;
+    }
+
+    p {
+      color: #d7d9dc;
+      font-size: 1.7rem;
+      font-weight: 300;
+      line-height: 1.7;
+      letter-spacing: -0.5px;
+
+      @media (width <= 540px) {
+        font-size: 14px;
+      }
+    }
+
+    .LearnMore {
+      margin-top: 50px;
+      text-align: left;
+
+      @media (width <= 1024px) {
+        margin-top: 60px;
+        text-align: right;
+      }
+
+      a {
+        background-color: #949aa1;
+        color: #fff;
+      }
+    }
+  }
+}

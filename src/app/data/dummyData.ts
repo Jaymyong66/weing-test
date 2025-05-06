@@ -1,5 +1,3 @@
-import { StaticImageData } from 'next/image';
-
 export interface DummyData {
   section1: {
     [key: number]: {

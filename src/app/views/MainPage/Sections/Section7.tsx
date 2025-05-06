@@ -5,7 +5,7 @@ import { useContactForm } from '@/hooks/useContactForm';
 
 import styles from './Section7.module.scss';
 
-const Section7 = () => {
+export const Section7 = () => {
   const { register, handleSubmit, errors, onSubmit } = useContactForm();
 
   return (
@@ -175,5 +175,3 @@ const Section7 = () => {
     </section>
   );
 };
-
-export default Section7;
