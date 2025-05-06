@@ -26,6 +26,9 @@ export interface DummyData {
     author: string;
     organization: string;
   }[];
+  section6: {
+    partners: string[];
+  };
 }
 
 export const getDummyData = (): DummyData => {
@@ -167,5 +170,29 @@ export const getDummyData = (): DummyData => {
         organization: '한국 MICE아카데미',
       },
     ],
+    section6: {
+      partners: [
+        '/images/partners/partner_1.jpg',
+        '/images/partners/partner_2.jpg',
+        '/images/partners/partner_3.jpg',
+        '/images/partners/partner_4.jpg',
+        '/images/partners/partner_5.jpg',
+        '/images/partners/partner_6.jpg',
+        '/images/partners/partner_7.jpg',
+        '/images/partners/partner_8.jpg',
+        '/images/partners/partner_9.jpg',
+        '/images/partners/partner_10.jpg',
+        '/images/partners/partner_11.jpg',
+        '/images/partners/partner_12.jpg',
+        '/images/partners/partner_13.jpg',
+        '/images/partners/partner_14.jpg',
+        '/images/partners/partner_15.jpg',
+        '/images/partners/partner_16.jpg',
+        '/images/partners/partner_17.jpg',
+        '/images/partners/partner_18.jpg',
+        '/images/partners/partner_19.jpg',
+        '/images/partners/partner_20.jpg',
+      ],
+    },
   };
 };

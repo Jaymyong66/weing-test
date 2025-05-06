@@ -1,0 +1,99 @@
+.AniRow {
+  position: relative;
+  width: 100%;
+  min-width: 212px;
+  height: 72px;
+  margin-bottom: 30px;
+  overflow: hidden;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (width <= 768px) {
+    margin-bottom: 20px;
+  }
+
+  @media (width <= 540px) {
+    height: 55px;
+    margin-bottom: 15px;
+  }
+}
+
+.LogoSlide,
+.LogoSlideReverse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  gap: 20px;
+  width: 4830px;
+  width: max-content;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.LogoSlide {
+  animation-name: marquee;
+}
+
+.LogoSlideReverse {
+  animation-name: marquee-reverse;
+}
+
+.PartnerItem {
+  float: left;
+  width: 200px;
+  margin-left: 10px;
+
+  @media (width <= 540px) {
+    width: 185px;
+  }
+
+  p {
+    box-sizing: border-box;
+    height: 72px;
+    line-height: 64px;
+    text-align: center;
+    filter: grayscale(100%);
+
+    @media (width <= 540px) {
+      height: 55px;
+      line-height: 48px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+
+    @media (width <= 350px) {
+      max-height: 75%;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(calc(-50% - 10px));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
