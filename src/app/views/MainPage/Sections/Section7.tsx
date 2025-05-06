@@ -1,68 +1,12 @@
-import { useForm } from 'react-hook-form';
-
 import { Inner } from '@/components/Inner';
 import { Size } from '@/components/Size';
 import { Title } from '@/components/Title';
+import { useContactForm } from '@/hooks/useContactForm';
 
 import styles from './Section7.module.scss';
 
-type FormValues = {
-  name: string;
-  phone: string;
-  email: string;
-  contents: string;
-  agree: boolean;
-  zsfCode: string;
-};
-
 const Section7 = () => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormValues>({
-    defaultValues: {
-      name: '',
-      phone: '',
-      email: '',
-      contents: '',
-      agree: false,
-      zsfCode: '',
-    },
-    mode: 'onChange',
-  });
-
-  const onSubmit = async (data: FormValues) => {
-    try {
-      const formData = new FormData();
-      Object.entries(data).forEach(([key, value]) => {
-        formData.append(key, value.toString());
-      });
-
-      const response = await fetch('https://mariakglobal.com/process.php', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error('서버 응답에 문제가 발생했습니다.');
-      }
-
-      const result = await response.json();
-
-      reset();
-    } catch (error) {
-      console.error('폼 제출 중 오류 발생:', error);
-    }
-  };
-
-  // const refreshCaptcha = () => {
-  //   const captImg = document.getElementById('captImg') as HTMLImageElement;
-  //   if (captImg) {
-  //     captImg.src = `/images/captcha1.jpg?t=${new Date().getTime()}`;
-  //   }
-  // };
+  const { register, handleSubmit, errors, onSubmit } = useContactForm();
 
   return (
     <section className={styles.Section7}>
