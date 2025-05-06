@@ -124,6 +124,7 @@
           line-height: 42px;
           letter-spacing: -0.5px;
           vertical-align: middle;
+          transition: border-color 0.3s ease;
 
           @media (width <= 540px) {
             font-size: 1.565rem;
@@ -132,6 +133,11 @@
           @media (width <= 430px) {
             height: 40px;
             line-height: 38px;
+          }
+
+          &.InputError {
+            border-color: #e66134;
+            background-color: rgb(230 97 52 / 3%);
           }
         }
 
@@ -147,6 +153,11 @@
           font-weight: 300;
           letter-spacing: -0.5px;
           resize: none;
+
+          &.InputError {
+            border-color: #e66134;
+            background-color: rgb(230 97 52 / 3%);
+          }
         }
       }
 
@@ -210,6 +221,15 @@
               text-align: center;
               content: '';
             }
+
+            &.LabelError {
+              color: #e66134;
+
+              &::before {
+                border-width: 2px;
+                border-color: #e66134;
+              }
+            }
           }
 
           .CheckBox:first-child {
@@ -265,6 +285,11 @@
           width: 82px;
           height: 40px;
           line-height: 40px;
+
+          &.InputError {
+            border-color: #e66134;
+            background-color: rgb(230 97 52 / 3%);
+          }
         }
 
         &::after {
@@ -292,12 +317,13 @@
       line-height: 50px;
       letter-spacing: 0;
       cursor: pointer;
-    }
+      transition: background-color 0.3s ease;
 
-    &::after {
-      display: block;
-      clear: both;
-      content: '';
+      &::after {
+        display: block;
+        clear: both;
+        content: '';
+      }
     }
   }
 }

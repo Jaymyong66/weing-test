@@ -1,10 +1,69 @@
+import { useForm } from 'react-hook-form';
+
 import { Inner } from '@/components/Inner';
 import { Size } from '@/components/Size';
 import { Title } from '@/components/Title';
 
 import styles from './Section7.module.scss';
 
+type FormValues = {
+  name: string;
+  phone: string;
+  email: string;
+  contents: string;
+  agree: boolean;
+  zsfCode: string;
+};
+
 const Section7 = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
+    defaultValues: {
+      name: '',
+      phone: '',
+      email: '',
+      contents: '',
+      agree: false,
+      zsfCode: '',
+    },
+    mode: 'onChange',
+  });
+
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const formData = new FormData();
+      Object.entries(data).forEach(([key, value]) => {
+        formData.append(key, value.toString());
+      });
+
+      const response = await fetch('https://mariakglobal.com/process.php', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('서버 응답에 문제가 발생했습니다.');
+      }
+
+      const result = await response.json();
+
+      reset();
+    } catch (error) {
+      console.error('폼 제출 중 오류 발생:', error);
+    }
+  };
+
+  // const refreshCaptcha = () => {
+  //   const captImg = document.getElementById('captImg') as HTMLImageElement;
+  //   if (captImg) {
+  //     captImg.src = `/images/captcha1.jpg?t=${new Date().getTime()}`;
+  //   }
+  // };
+
   return (
     <section className={styles.Section7}>
       <Inner>
@@ -17,8 +76,7 @@ const Section7 = () => {
               <form
                 name='contact'
                 id='contact'
-                method='POST'
-                action='https://mariakglobal.com/process.php'
+                onSubmit={handleSubmit(onSubmit)}
               >
                 <table className={styles.ContactFormTable}>
                   <caption>상담문의</caption>
@@ -39,8 +97,12 @@ const Section7 = () => {
                         <input
                           id='name'
                           type='text'
-                          name='name'
                           placeholder='이름을 입력해주세요'
+                          className={errors.name ? styles.InputError : ''}
+                          {...register('name', {
+                            required: true,
+                            maxLength: 10,
+                          })}
                         />
                       </td>
                       <td className={styles.None}>여백</td>
@@ -54,8 +116,12 @@ const Section7 = () => {
                         <input
                           id='phone'
                           type='text'
-                          name='phone'
                           placeholder='전화번호를 입력해주세요'
+                          className={errors.phone ? styles.InputError : ''}
+                          {...register('phone', {
+                            required: true,
+                            pattern: /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/,
+                          })}
                         />
                       </td>
                     </tr>
@@ -70,8 +136,12 @@ const Section7 = () => {
                         <input
                           id='email'
                           type='text'
-                          name='email'
                           placeholder='이메일을 입력해주세요'
+                          className={errors.email ? styles.InputError : ''}
+                          {...register('email', {
+                            required: true,
+                            pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                          })}
                         />
                       </td>
                     </tr>
@@ -86,14 +156,28 @@ const Section7 = () => {
                           </em>
                           <textarea
                             id='contents'
-                            name='contents'
                             placeholder='문의 내용을 적어주세요'
+                            className={errors.contents ? styles.InputError : ''}
+                            {...register('contents', {
+                              required: true,
+                              minLength: 10,
+                            })}
                           />
                         </div>
                         <div className={styles.CheckList}>
                           <div className={styles.CheckBox}>
-                            <input type='checkbox' id='agree' name='agree' />
-                            <label htmlFor='agree'>
+                            <input
+                              type='checkbox'
+                              id='agree'
+                              className={errors.agree ? styles.CheckError : ''}
+                              {...register('agree', {
+                                required: true,
+                              })}
+                            />
+                            <label
+                              htmlFor='agree'
+                              className={errors.agree ? styles.LabelError : ''}
+                            >
                               개인정보 수집방침에 동의합니다.(필수)
                             </label>
                           </div>
@@ -110,14 +194,19 @@ const Section7 = () => {
                               type='button'
                               value='새로고침'
                               className={styles.SpamRefresh}
+                              // onClick={refreshCaptcha}
                             />
                             <input
                               type='text'
-                              name='zsfCode'
                               id='zsfCode'
-                              className={styles.ZsfCode}
+                              className={`${styles.ZsfCode} ${errors.zsfCode ? styles.InputError : ''}`}
                               maxLength={6}
                               autoComplete='off'
+                              {...register('zsfCode', {
+                                required: true,
+                                minLength: 6,
+                                maxLength: 6,
+                              })}
                             />
                           </div>
                         </div>
@@ -126,15 +215,8 @@ const Section7 = () => {
                   </tbody>
                 </table>
                 <div className={styles.SubmitButtonWrapper}>
-                  <button
-                    type='submit'
-                    className={styles.SubmitButton}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      console.log('send');
-                    }}
-                  >
-                    {'Send'}
+                  <button type='submit' className={styles.SubmitButton}>
+                    Send
                   </button>
                 </div>
               </form>
