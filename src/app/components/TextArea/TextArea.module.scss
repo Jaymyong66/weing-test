@@ -13,6 +13,10 @@
     letter-spacing: -0.5px;
     word-break: keep-all;
     word-wrap: break-word;
+
+    @media (width <= 540px) {
+      font-size: 1.4rem;
+    }
   }
 
   .dpb {

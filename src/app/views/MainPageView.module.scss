@@ -303,6 +303,10 @@
       @media (width <= 460px) {
         left: 50px;
       }
+
+      @media (width <= 375px) {
+        left: 30px;
+      }
     }
 
     &::after {
@@ -332,6 +336,38 @@
       width: 305px;
       background-color: #e66134;
       transform: skew(1deg, 1deg);
+
+      @media (width <= 1024px) {
+        width: 275px;
+      }
+
+      @media (width <= 768px) {
+        bottom: -16px;
+        width: 233px;
+        height: 28px;
+      }
+
+      @media (width <= 540px) {
+        width: 197px;
+      }
+
+      @media (width <= 460px) {
+        width: 185px;
+      }
+
+      @media (width <= 430px) {
+        width: 175px;
+        height: 24px;
+      }
+
+      @media (width <= 375px) {
+        right: -15px;
+        width: 158px;
+      }
+
+      @media (width <= 350px) {
+        width: 144px;
+      }
     }
 
     p {
@@ -367,12 +403,39 @@
     padding-top: 200px;
     padding-left: 55px;
 
+    @media (width <= 1024px) {
+      float: none;
+      width: 100%;
+      margin-top: 45px;
+      padding: 0 35px 0 70px;
+    }
+
+    @media (width <= 540px) {
+      margin-top: 30px;
+    }
+
+    @media (width <= 460px) {
+      padding: 0 20px 0 50px;
+    }
+
+    @media (width <= 375px) {
+      margin-top: 25px;
+    }
+
+    @media (width <= 350px) {
+      padding: 0 20px 0 23px;
+    }
+
     p {
       color: #d7d9dc;
       font-size: 1.7rem;
       font-weight: 300;
       line-height: 1.7;
       letter-spacing: -0.5px;
+
+      @media (width <= 540px) {
+        font-size: 14px;
+      }
     }
 
     .LearnMore {
@@ -613,6 +676,10 @@
       font-weight: 400;
       line-height: 1.5;
       letter-spacing: -0.5px;
+
+      @media (width <= 540px) {
+        font-size: 1.4rem;
+      }
     }
   }
 
