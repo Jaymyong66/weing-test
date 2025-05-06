@@ -156,9 +156,16 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
               <div className={styles.SlideArea}>
                 <Swiper
                   spaceBetween={30}
-                  slidesPerView={3.5}
                   centeredSlides={true}
                   loop={true}
+                  breakpoints={{
+                    1024: {
+                      slidesPerView: 3.5,
+                    },
+                    100: {
+                      slidesPerView: 3,
+                    },
+                  }}
                   className={styles.CaseSlide}
                 >
                   {data.section4.map((item, index) => (
@@ -171,11 +178,7 @@ export const MainPageView: React.FC<MainPageViewProps> = ({ data }) => {
                               backgroundImage: `url(${item.imageSrc})`,
                             }}
                           >
-                            <Image
-                              src={img_main_sec4_1}
-                              alt=''
-                              style={{ height: '260px' }}
-                            />
+                            <Image src={img_main_sec4_1} alt='' />
                           </div>
                           <div className={styles.TextBox}>
                             <div className={styles.Table}>

@@ -629,10 +629,6 @@
   .CaseSlide {
     position: static;
     overflow: initial;
-
-    @media (width <= 768px) {
-      overflow: hidden;
-    }
   }
 
   .TextBox {
@@ -729,7 +725,7 @@
     }
 
     @media (width <= 540px) {
-      padding: 06px 0;
+      padding: 60px 0;
     }
 
     @media (width <= 430px) {
