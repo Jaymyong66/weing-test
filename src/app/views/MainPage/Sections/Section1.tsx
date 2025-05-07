@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Inner } from '@/components/Inner';
 import { Size } from '@/components/Size';
@@ -13,17 +13,36 @@ interface Section1Props {
 
 export const Section1 = ({ data }: Section1Props) => {
   const [currentVisual, setCurrentVisual] = useState(data[1]);
+  const [mainTxtClass, setMainTxtClass] = useState('');
+  const [isFading, setIsFading] = useState(false);
 
   const handleNextTileClick = () => {
-    setCurrentVisual(data[currentVisual.next]);
+    if (isFading) return;
+
+    setIsFading(true);
+    setMainTxtClass(styles.SlideUp);
+
+    setTimeout(() => {
+      setCurrentVisual(data[currentVisual.next]);
+      setMainTxtClass(styles.SlideDown);
+
+      setTimeout(() => {
+        setMainTxtClass('');
+        setIsFading(false);
+      }, 300);
+    }, 300);
   };
 
   return (
     <section
       className={styles.Section1}
-      style={{ backgroundImage: `url(${currentVisual.mainVisual})` }}
+      style={{
+        backgroundImage: `url(${currentVisual.mainVisual})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+      }}
     >
-      <div className={styles.MainTxt}>
+      <div className={`${styles.MainTxt} ${mainTxtClass}`}>
         <Size className={styles.Size}>
           <Inner.InnerTable>
             <div className={styles.Section1Title}>{currentVisual.title}</div>
@@ -58,6 +77,7 @@ export const Section1 = ({ data }: Section1Props) => {
             alt='next'
             width={210}
             height={300}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
           />
         </div>
       </button>
