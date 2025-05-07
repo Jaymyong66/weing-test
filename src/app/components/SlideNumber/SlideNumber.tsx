@@ -32,7 +32,9 @@ const SlideNumber = ({ slideData }: SlideNumberProps) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   const handleSlideChange = (swiper: SwiperType) => {
-    setCurrentNum(swiper.activeIndex);
+    const realIndex = swiper.realIndex;
+
+    setCurrentNum(realIndex);
   };
 
   const handlePrev = () => {
@@ -63,6 +65,7 @@ const SlideNumber = ({ slideData }: SlideNumberProps) => {
           <Swiper
             spaceBetween={20}
             slidesPerView={1}
+            loop={true}
             onSlideChange={handleSlideChange}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
